@@ -25,19 +25,19 @@
       <div class="row">
             <div class="form-group col-md-4">
               <label for="Name">Name:</label>
-              <input type="text" class="form-control" name="pedidos_nome" id="name">
+              <input type="text" class="form-control" name="pedidos_nome" id="pedidos_nome">
             </div>
           </div>
           <div class="row">
               <div class="form-group col-md-4">
                 <label for="Club">Club:</label>
-                <input type="text" class="form-control" name="pedido_numero" id="club">
+                <input type="text" class="form-control" name="pedido_numero" id="pedido_numero">
               </div>
           </div>
           <div class="row">
              <div class="form-group col-md-4">
                 <label for="Country">Country:</label>
-                <input type="text" class="form-control" name="pedido_qtda" id="country">
+                <input type="text" class="form-control" name="pedido_qtda" id="pedido_qtda">
               </div>
           </div>
       </div>
@@ -401,9 +401,9 @@
                   url: "{{ url('/pedidos') }}",
                   method: 'post',
                   data: {
-                     pedido: jQuery('#pedidos_nome').val(),
-                     numero: jQuery('#pedido_numero').val(),
-                     quantidade: jQuery('#pedido_qtda').val(),
+                    pedidos_nome: jQuery('#pedidos_nome').val(),
+                    pedido_numero: jQuery('#pedido_numero').val(),
+                    pedido_qtda: jQuery('#pedido_qtda').val(),
                   },
                   success: function(result){
                   	if(result.errors)
@@ -420,6 +420,7 @@
                   		jQuery('.alert-danger').hide();
                   		$('#open').hide();
                   		$('#myModal').modal('hide');
+                      $('.modal-backdrop').remove();
                   	}
                   }});
                });

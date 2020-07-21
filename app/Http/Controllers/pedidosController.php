@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pedidos;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class pedidosController extends Controller
 {
@@ -24,7 +26,7 @@ class pedidosController extends Controller
         {
             return response()->json(['errors'=>$validator->errors()->all()]);
         }
-        $goalscorer= new pedidosController();
+        $goalscorer= new Pedidos();
         $goalscorer->pedidos_nome=$request->get('pedidos_nome');
         $goalscorer->pedido_numero=$request->get('pedido_numero');
         $goalscorer->pedido_qtda=$request->get('pedido_qtda');
